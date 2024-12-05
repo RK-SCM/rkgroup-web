@@ -84,7 +84,6 @@ html, body {
 }
 
 /* Banner Section */
-
 .banner {
     position: relative;
     width: 100%;
@@ -94,58 +93,35 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-image 1s ease-in-out; /* Smooth background change */
 }
-
 
 .banner-text {
-    display: flex; /* Use flexbox for alignment */
+    display: flex;
+    flex-direction: row; /* Stack items vertically */
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Space between image and text */
-    position: relative;
-    top: 10%; /* Push content slightly below the vertical center */
     text-align: center;
+    gap: 20px; /* Space between image and text */
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 1;
 }
-
 
 .banner-text img {
     max-width: 100%;
     height: auto;
     width: 300px; /* Adjust width as needed */
-    
-}
-
-
-
-.banner-text h1 {
-    font-size: 3rem;
-    font-weight: bold;
 }
 
 .banner-text p {
     font-size: 1.5rem;
-    margin-top: 10px;
+    margin: 0;
+    transition: opacity 1s ease-in-out; /* Smooth text fade-in/out */
 }
-
-
-
-
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .banner-text {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        gap: 10px;
-    }
-    .banner-text img {
-        width: 120px; /* Reduce image size */
-    }
-
-    .banner-text p {
-        font-size: 1.2rem;
-    }
     .menu-toggle {
         display: block; /* Show toggle button for small screens */
     }
@@ -170,29 +146,18 @@ html, body {
         display: flex;
     }
 
-    .nav ul li a {
-        color: #333; /* Dark color for mobile menu */
-    }
-
-    .logo {
-        margin-left: 50px; /* Adjust logo spacing */
-    }
-
-    .banner-text h1 {
-        font-size: 2rem;
+    .banner-text img {
+        width: 200px; /* Adjust image size */
     }
 
     .banner-text p {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 }
 
 @media (max-width: 480px) {
-    .banner-text h1 {
-        font-size: 1.5rem;
-    }
     .banner-text img {
-        width: 100px; /* Further reduce image size */
+        width: 150px; /* Adjust image size for smaller devices */
     }
 
     .banner-text p {
