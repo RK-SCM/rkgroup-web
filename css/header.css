@@ -17,7 +17,7 @@
 }
 
 .header.scrolled {
-    background: #fff; /* Change background to white when scrolled */
+    background: #faf9f9; /* Change background to white when scrolled */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     height: 50px; /* Reduced header height when scrolled */
 }
@@ -40,7 +40,7 @@
 
 .nav ul li a {
     text-decoration: none;
-    color: #f7f0f0;
+    color: #2c2d5c;
     font-size: 1rem;
     transition: color 0.3s;
 }
