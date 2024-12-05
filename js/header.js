@@ -14,9 +14,11 @@ if (menuToggle) {
 window.addEventListener("scroll", () => {
     if (window.scrollY > 100) {
         header.classList.add("scrolled");
+        header.classList.remove("transparent");
         logoImg.src = "img/logo_scrolled.jpg";
     } else {
         header.classList.remove("scrolled");
+        header.classList.add("transparent");
         logoImg.src = "img/logo_default.jpg";
     }
 });
