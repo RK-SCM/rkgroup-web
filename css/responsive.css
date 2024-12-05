@@ -1,0 +1,44 @@
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.9);
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 200px;
+        height: 100vh;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+        z-index: 20;
+    }
+
+    .nav ul.show {
+        display: flex;
+    }
+
+    .banner-text img {
+        width: 200px;
+    }
+
+    .banner-text p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-text img {
+        width: 150px;
+    }
+
+    .banner-text p {
+        font-size: 1rem;
+    }
+}
