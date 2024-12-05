@@ -88,19 +88,30 @@ html, body {
     position: relative;
     width: 100%;
     height: 100vh; /* Full screen height */
-    background: url('img/banner_g1.jpg') no-repeat center center; /* Banner image */
+    background: url('img/banner_gold.jpg') no-repeat center center; /* Banner image */
     background-size: cover; /* Ensure full coverage */
     text-align: center;
 }
 
+
 .banner-text {
     position: absolute;
-    top: 50%;
+    top: 55%; /* Position below the center */
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
+
+.banner-text img {
+    max-width: 100%;
+    height: auto;
+    width: 300px; /* Adjust width as needed */
+    margin-bottom: 10px;
+}
+
+
 
 .banner-text h1 {
     font-size: 3rem;
@@ -111,6 +122,10 @@ html, body {
     font-size: 1.5rem;
     margin-top: 10px;
 }
+
+
+
+
 
 /* Responsive Styles */
 @media (max-width: 768px) {
