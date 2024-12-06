@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +11,13 @@
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/counter.css">
     <link rel="stylesheet" href="css/companies.css">
+    <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/news.css">
     <link rel="stylesheet" href="css/news2.css">
     <link rel="stylesheet" href="css/footer.css">
-    
+
 </head>
+
 <body>
     <header class="header" id="header">
         <button class="menu-toggle" id="menu-toggle">☰</button>
@@ -58,10 +61,9 @@
             <a href="#" class="learn-more">Learn More</a>
         </div>
     </section>
-    
 
-     <!-- Section 2: Counters -->
-     <section class="about-bottom">
+
+    <section class="about-bottom">
         <div class="counter-grid">
             <div class="counter-item">
                 <img src="img/1.png" alt="Experience">
@@ -83,68 +85,40 @@
                 <h3><span class="counter" data-target="10">0</span></h3>
                 <p>group of companies</p>
             </div>
-            <div class="counter-item">
-                <img src="img/1.png" alt="Employees">
-                <h3><span class="counter" data-target="2000">0</span>+</h3>
-                <p>employees</p>
-            </div>
-            <div class="counter-item">
-                <img src="img/2.png" alt="Jewellery Showrooms">
-                <h3><span class="counter" data-target="25">0</span></h3>
-                <p>jewellery showrooms</p>
-            </div>
-            <div class="counter-item">
-                <img src="img/3.png" alt="Hypermarket Showrooms">
-                <h3><span class="counter" data-target="15">0</span></h3>
-                <p>hypermarket showrooms</p>
-            </div>
-            <div class="counter-item">
-                <img src="img/4.png" alt="Other">
-                <h3><span class="counter" data-target="50">0</span></h3>
-                <p>other metrics</p>
-            </div>
         </div>
     </section>
+
 
 
     <section class="companies">
         <h2>OUR GROUP OF COMPANIES</h2>
         <div class="companies-grid">
-            <a href="http://company1.com" target="_blank" class="company-box">
+            <div class="company-box" data-title="Company 1" data-description="This is a detailed description of Company 1. It specializes in providing top-quality products and services to its customers worldwide." data-img="img/company_logo1.png">
                 <img src="img/company_logo1.png" alt="Company 1">
                 <p>Company 1</p>
-            </a>
-            <a href="http://company2.com" target="_blank" class="company-box">
+            </div>
+            <div class="company-box" data-title="Company 2" data-description="This is a detailed description of Company 2. It offers exceptional value and quality in its products and services." data-img="img/company_logo2.png">
                 <img src="img/company_logo2.png" alt="Company 2">
                 <p>Company 2</p>
-            </a>
-            <a href="http://company3.com" target="_blank" class="company-box">
-                <img src="img/company_logo1.png" alt="Company 3">
-                <p>Company 3</p>
-            </a>
-            <a href="http://company4.com" target="_blank" class="company-box">
-                <img src="img/company_logo2.png" alt="Company 4">
-                <p>Company 4</p>
-            </a>
-            <a href="http://company5.com" target="_blank" class="company-box">
-                <img src="img/company_logo1.png" alt="Company 5">
-                <p>Company 5</p>
-            </a>
-            <a href="http://company6.com" target="_blank" class="company-box">
-                <img src="img/company_logo2.png" alt="Company 6">
-                <p>Company 6</p>
-            </a>
-            <a href="http://company7.com" target="_blank" class="company-box">
-                <img src="img/company_logo1.png" alt="Company 7">
-                <p>Company 7</p>
-            </a>
-            <a href="http://company8.com" target="_blank" class="company-box">
-                <img src="img/company_logo2.png" alt="Company 8">
-                <p>Company 8</p>
-            </a>
+            </div>
+            <!-- Add more companies as needed -->
+        </div>
+        
+        <!-- Modal Structure -->
+        <div id="popupModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span> <!-- Close Button -->
+                <img src="" alt="Modal Image" class="modal-image" id="modalImage">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+                <div class="modal-buttons">
+                    <button class="action-btn">More</button>
+                </div>
+            </div>
         </div>
     </section>
     
+
 
     <section class="news-section">
         <div class="news-overlay">
@@ -153,7 +127,7 @@
         </div>
         <img src="img/news1.png" alt="Latest News" class="news-image">
     </section>
-    
+
     <section class="news-carousel">
         <div class="carousel-container">
             <div class="carousel-wrapper">
@@ -178,7 +152,7 @@
 
     <footer class="footer">
         <div class="footer-container">
-         
+
             <!-- Section 2: Quick Links -->
             <div class="footer-links">
                 <h3>Quick Links</h3>
@@ -190,7 +164,7 @@
                     <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
-    
+
             <!-- Section 3: Contact Info -->
             <div class="footer-contact">
                 <h3>Contact Us</h3>
@@ -200,7 +174,7 @@
                     <strong>Address:</strong> Rajakumari Tower, XYZ Road, India
                 </p>
             </div>
-    
+
             <!-- Section 4: Social Media -->
             <div class="footer-social">
                 <h3>Follow Us</h3>
@@ -208,7 +182,7 @@
                     <a href="#"><img src="img/fb-icon.svg" alt="Facebook"></a>
                     <a href="#"><img src="img/instagram.svg" alt="Instagram"></a>
                     <a href="#"><img src="img/whatsapp.svg" alt="whatsapp"></a>
-                    
+
                 </div>
             </div>
         </div>
@@ -216,7 +190,7 @@
             <p>&copy; 2025 Rajakumari Group. All Rights Reserved.</p>
         </div>
     </footer>
-    
+
 
     <script src="js/header.js"></script>
     <script src="js/banner.js"></script>
@@ -224,7 +198,11 @@
     <script src="js/counter.js"></script>
     <script src="js/news2.js"></script>
     <script src="js/footer.js"></script>
-    <script src="js/about.js"></script>
+    
+    <script src="js/modal.js"></script>
+
+
 
 </body>
+
 </html>
