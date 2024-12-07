@@ -2,7 +2,7 @@
 .about-bottom {
     display: block;
     padding: 40px 20px; /* Adequate spacing for breathing room */
-    background: #2e2d2d; 
+    background: #5c5b5b; 
     text-align: center;
     position: relative;
 }
@@ -18,7 +18,7 @@
 .counter-item {
     background: linear-gradient(135deg, #f3e8aa, #ceb37e); /* Rich gold gradient */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow for depth */
-    border-radius: 12px; /* Rounded corners for a modern feel */
+    border-radius: 90px; /* Rounded corners for a modern feel */
     padding: 25px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
