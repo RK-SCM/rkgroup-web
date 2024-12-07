@@ -1,64 +1,81 @@
+/* About Bottom Section */
 .about-bottom {
-    background: #000;
-    color: #fff;
-    padding: 50px 20px;
+    display: block;
+    padding: 40px 20px; /* Adequate spacing for breathing room */
+    background: #2e2d2d; 
+    text-align: center;
+    position: relative;
 }
 
 .counter-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    text-align: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ensure responsive grid layout */
+    gap: 30px; /* Larger space between cards */
+    align-items: center;
+    justify-content: center;
 }
 
 .counter-item {
-    background: #111;
-    border-radius: 10px;
-    padding: 20px;
-    transition: transform 0.3s ease;
+    background: linear-gradient(135deg, #f3e8aa, #ceb37e); /* Rich gold gradient */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow for depth */
+    border-radius: 12px; /* Rounded corners for a modern feel */
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
 }
 
 .counter-item:hover {
-    transform: scale(1.05);
+    transform: translateY(-8px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
 }
 
 .counter-item img {
-    width: 50px;
-    margin-bottom: 10px;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    filter: none; /* No grayscale for a polished look */
 }
 
 .counter-item h3 {
-    font-size: 1.5rem;
-    margin: 10px 0;
+    font-size: 1.6rem; /* Emphasize the counter number */
+    font-weight: bold;
+    color: #333; /* Strong contrast for text */
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6); /* Subtle text shadow for elegance */
 }
 
 .counter-item p {
-    font-size: 1rem;
-    color: #ccc;
+    font-size: 1rem; /* Standard size for supporting text */
+    color: #444; /* Slightly darker text for better readability */
+    margin-bottom: 0;
+    text-transform: capitalize; /* Uniform text style */
 }
 
-/* Responsive Styles */
+/* Add subtle dividers between sections */
+.about-bottom::before {
+    content: "";
+    display: block;
+    height: 2px;
+    background: linear-gradient(to right, #ffd700, #e8af3c);
+    margin: 0 auto 30px;
+    width: 80%; /* Centered and constrained divider */
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .about-top {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-image {
-        max-width: 100%;
-    }
-
-    .about-text {
-        margin: 20px 0 0;
-    }
-
     .counter-grid {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 20px; /* Slightly reduced gap for smaller screens */
     }
-}
 
-@media (max-width: 480px) {
-    .counter-grid {
-        grid-template-columns: 1fr;
+    .counter-item {
+        padding: 20px;
+    }
+
+    .counter-item h3 {
+        font-size: 1.4rem; /* Adjust text size for smaller screens */
+    }
+
+    .counter-item p {
+        font-size: 0.9rem; /* Slightly smaller supporting text */
     }
 }
