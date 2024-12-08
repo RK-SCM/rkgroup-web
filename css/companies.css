@@ -1,52 +1,86 @@
+
+
 .companies {
     text-align: center;
-    padding: 50px 20px;
+    margin: 20px auto; /* Add margin for spacing between sections */
     background-color: #f9f9f9;
 }
 
 .companies h2 {
-    font-size: 2rem;
-    color: #333;
+    font-size: 2.5rem; /* Increased font size for better visibility */
+    font-family: 'Roboto', sans-serif; /* Professional font, adjust as needed */
+    color: #2c3e50; /* Sophisticated dark gray/blue color */
     margin-bottom: 30px;
+    text-align: center; /* Align text to the left */
+    padding-left: 20px; /* Add padding to the left for better spacing */
+    font-weight: bold; /* Bold for emphasis */
+    text-transform: uppercase; /* Optional: Make text uppercase for a professional look */
+    letter-spacing: 1.5px; /* Add spacing between letters for better readability */
 }
 
+/* Companies Grid Layout */
 .companies-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid layout */
-    gap: 20px;
-    justify-items: center;
-    align-items: center;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns by default */
+    gap: 0; /* Add space between images */
+    justify-items: center; /* Center images horizontally */ /* Center images vertically */
+    padding: 0px 200px; /* Add padding to the left and right */
 }
+
+
 
 .company-box {
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
-}
-
-.company-box:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
+    display: flex; /* Enable flexbox for centering */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Ensure full width of grid cell */
+    height: 100%; /* Ensure full height of grid cell */
+    overflow: hidden; 
 }
 
 .company-box img {
-    width: auto;
-    height: auto;
-    max-width: 250px; /* Limit the maximum width */
-    max-height: 200px; /* Limit the maximum height */
-    object-fit: contain; 
+    width: 100%; /* Ensure image fills its container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Fit the image without distortion */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    border: none; /* Ensure no border is applied */
+}
+
+.company-box:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
 /* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .companies-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+    }
+
+    .company-box {
+        width: 120px; /* Smaller size for medium screens */
+        height: 120px;
+    }
+}
+
 @media (max-width: 768px) {
     .companies-grid {
-        grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+    }
+
+    .company-box {
+        width: 100px; /* Smaller size for smaller screens */
+        height: 100px;
     }
 }
 
 @media (max-width: 480px) {
     .companies-grid {
-        grid-template-columns: 1fr; /* Single column on very small screens */
+        grid-template-columns: 1fr; /* Single column for very small screens */
     }
 
-    .company-box img {
-        max-width: 120px; /* Smaller logos for small screens */
+    .company-box {
+        width: 80px; /* Smallest size for mobile */
+        height: 80px;
     }
 }

@@ -1,90 +1,56 @@
-/* About Top Section */
-/* About Top Section */
-.about-top {
+/* Full-width Image Section */
+.full-width-image {
     position: relative;
-    z-index: 2;
-    width: 100%;
-    padding: 30px;
-    background: url('../img/logo.png') no-repeat center center;
-    background-size: cover;
+    width: 100%; /* Full width */
+    height: 80vh; /* 50% of the screen height */
+    background: url('../img/about1.png') no-repeat center center; /* Replace with your image path */
+    background-size: cover; /* Ensure the image fills the section without distortion */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh; /* Full height */
+    align-items: center; /* Align text vertically */
+    justify-content: flex-end; /* Position text in the second column */
 }
 
-.about-text {
-    max-width: 700px;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* Text Container */
+.text-container {
+    width: 50%; /* Take up the second column */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for contrast */
+    padding: 20px; /* Add padding for better readability */
+    color: #fff; /* Text color */
+    text-align: left; /* Align text to the left */
+    margin-right: 50px; /* Space from the right edge */
+    border-radius: 10px; /* Optional: Rounded corners for the text field */
 }
 
-.about-text h2 {
-    font-size: 2rem;
-    color: #d81b60;
+/* Text Styling */
+.text-container h2 {
+    font-size: 2.5rem; /* Large heading */
+    margin-bottom: 10px;
     font-weight: bold;
-    margin-bottom: 15px;
+    text-transform: uppercase; /* Optional: Make the text uppercase */
 }
 
-.about-text h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-.about-text p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-.hidden-content {
-    display: none; /* Initially hidden */
-}
-
-.hidden-content.visible {
-    display: block; /* Show when toggled */
-}
-
-.about-text .more {
-    display: inline-block;
-    text-decoration: underline;
-    font-weight: bold;
-    color: #d81b60;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.about-text .more:hover {
-    color: #b3184d;
+.text-container p {
+    font-size: 1.2rem;
+    line-height: 1.6; /* Adjust line height for better readability */
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .about-top {
-        height: auto; /* Adjust height for smaller screens */
-        padding: 20px;
+    .text-container {
+        width: 80%; /* Make text container smaller on small screens */
+        margin: 0 auto; /* Center align on smaller screens */
+        text-align: center; /* Center-align text */
     }
 
-    .about-text {
-        width: 100%; /* Make the text box full width */
-        padding: 20px;
+    .full-width-image {
+        justify-content: center; /* Center text container on small screens */
     }
 
-    .about-text h2 {
-        font-size: 1.8rem;
+    .text-container h2 {
+        font-size: 2rem; /* Adjust font size */
     }
 
-    .about-text h3 {
-        font-size: 1.4rem;
-    }
-
-    .about-text p {
-        font-size: 0.9rem;
+    .text-container p {
+        font-size: 1rem; /* Adjust font size */
     }
 }

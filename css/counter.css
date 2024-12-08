@@ -16,8 +16,7 @@
 }
 
 .counter-item {
-    background: linear-gradient(135deg, #f3e8aa, #ceb37e); /* Rich gold gradient */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow for depth */
+    background: transparent; /* Rich gold gradient */
     border-radius: 90px; /* Rounded corners for a modern feel */
     padding: 25px;
     text-align: center;
@@ -39,27 +38,18 @@
 .counter-item h3 {
     font-size: 1.6rem; /* Emphasize the counter number */
     font-weight: bold;
-    color: #333; /* Strong contrast for text */
+    color: #eeb807da; /* Strong contrast for text */
     margin-bottom: 8px;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6); /* Subtle text shadow for elegance */
 }
 
 .counter-item p {
     font-size: 1rem; /* Standard size for supporting text */
-    color: #444; /* Slightly darker text for better readability */
+    color: #fce308; /* Slightly darker text for better readability */
     margin-bottom: 0;
     text-transform: capitalize; /* Uniform text style */
 }
 
-/* Add subtle dividers between sections */
-.about-bottom::before {
-    content: "";
-    display: block;
-    height: 2px;
-    background: linear-gradient(to right, #ffd700, #e8af3c);
-    margin: 0 auto 30px;
-    width: 80%; /* Centered and constrained divider */
-}
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
