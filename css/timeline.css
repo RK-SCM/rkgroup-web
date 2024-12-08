@@ -1,0 +1,114 @@
+/* History Section */
+.history-section {
+    background-color: #222;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Hide overflow for scrolling effect */
+}
+
+.history-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #d4af37; /* Gold color */
+}
+
+.timeline-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Hide overflowing timeline items */
+    height: 300px; /* Set fixed height for the timeline */
+}
+
+.timeline {
+    display: flex;
+    animation: scroll-timeline 25s linear infinite; /* Animation for scrolling */
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0; /* Prevent shrinking */
+    min-width: 350px; /* Fixed width for items */
+    margin-right: 50px; /* Space between items */
+    opacity: 0; /* Initially hidden */
+    animation: appear-from-right 5s ease-in-out infinite;
+}
+
+.timeline-year {
+    font-size: 1.2rem;
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+.timeline-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.timeline-text {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #ccc;
+    max-width: 150px;
+}
+
+/* Scrolling Animation */
+@keyframes scroll-timeline {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the right */
+    }
+    100% {
+        transform: translateX(-100%); /* End off-screen to the left */
+    }
+}
+
+/* Appearance Animation */
+@keyframes appear-from-right {
+    0% {
+        opacity: 0;
+        transform: translateX(50px); /* Start slightly off-screen */
+    }
+    10% {
+        opacity: 1;
+        transform: translateX(0); /* Fade in and slide into view */
+    }
+    90% {
+        opacity: 1;
+        transform: translateX(0); /* Stay visible */
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50px); /* Slide out to the left */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline-item {
+        min-width: 200px; /* Smaller items for smaller screens */
+    }
+    .timeline-circle {
+        width: 80px;
+        height: 80px;
+    }
+    .timeline-container {
+        height: 150px;
+    }
+}
