@@ -13,9 +13,9 @@
 /* Text Container */
 .text-container {
     width: 50%; /* Take up the second column */
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for contrast */
+    background:transparent; /* Semi-transparent background for contrast */
     padding: 20px; /* Add padding for better readability */
-    color: #fff; /* Text color */
+    color: #030303; /* Text color */
     text-align: left; /* Align text to the left */
     margin-right: 50px; /* Space from the right edge */
     border-radius: 10px; /* Optional: Rounded corners for the text field */
@@ -33,6 +33,24 @@
     font-size: 1.2rem;
     line-height: 1.6; /* Adjust line height for better readability */
 }
+
+
+.learn-more-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background: #d81b60;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.learn-more-link:hover {
+    background: #b3184d;
+    color: #fff;
+}
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {

@@ -1,0 +1,120 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+.banner {
+    position: relative;
+    width: 100%;
+    height: 30vh; /* 30% of the viewport height */
+    max-height: 30vh; /* Prevent exceeding 30% height */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center items vertically */
+    transition: background-image 1s ease-in-out;
+    overflow: hidden; /* Prevent content overflow */
+    z-index: 1; /* Ensure the banner is layered below other elements */
+}
+
+.banner img {
+    max-height: 100%; /* Ensure the logo fits within the banner */
+    max-width: 100%; /* Prevent overflow */
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+.about-detailed-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px; /* Adjust padding to include space on all sides */
+    margin: 50px auto 0; /* Ensure a clear gap above the grid */
+    max-width: auto;
+    z-index: 2; /* Ensure the grid stays above the banner */
+    position: relative; /* Stack correctly with the banner */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Three columns: 1fr for heading, 2fr for content, 1fr for image */
+    grid-template-rows: auto; /* One row */
+    gap: 20px; /* Space between items */
+    width: auto;
+}
+
+/* Heading Styles */
+.grid-heading {
+    text-align: left;
+    align-self: start; /* Align heading at the top */
+    justify-self: center;
+    margin-top: 20px;
+}
+
+.grid-heading h1 {
+    font-size: 2.5rem;
+    color: #2c974b;
+    margin-bottom: 20px;
+}
+
+/* Content Styles */
+.grid-content {
+    text-align: left;
+   
+}
+
+.grid-content p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.grid-content strong {
+    color: #000;
+}
+
+/* Image Styles */
+.grid-image {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-image img {
+    width: 100%; /* Scale image */
+    max-width: 250px; /* Optional: Limit the max size */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-caption {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Single-column layout for smaller screens */
+        grid-template-rows: auto auto auto; /* Stack items vertically */
+    }
+
+    .grid-heading,
+    .grid-content,
+    .grid-image {
+        text-align: center;
+    }
+
+    .grid-image img {
+        max-width: 100%;
+    }
+}
