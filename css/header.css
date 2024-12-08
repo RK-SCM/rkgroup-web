@@ -9,27 +9,31 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
+    padding: 10px 30px;
     background: transparent; /* Initially transparent */
     transition: background 0.3s ease, height 0.3s ease;
     z-index: 10;
-    height: 80px; /* Initial header height */
+    height: 150px; /* Initial header height */
 }
 
 .header.scrolled {
     background: #faf9f9; /* Change background to white when scrolled */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 50px; /* Reduced header height when scrolled */
+    height: 70px; /* Reduced header height when scrolled */
 }
 
+
+
 .logo img {
-    height: 80px; /* Default logo height */
+    height: 150px; /* Default logo height */
     transition: height 0.3s ease;
 }
 
 .header.scrolled .logo img {
-    height: 40px; /* Reduced logo height when scrolled */
+    height: 50px; /* Reduced logo height when scrolled */
 }
+
+
 
 /* Navigation Menu */
 .nav ul {
