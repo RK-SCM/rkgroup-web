@@ -21,17 +21,17 @@
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     position: absolute; /* Position relative to the banner */
-    top: 70%; /* Push text down from the top (adjust this for more or less space) */
+    top: 80%; /* Push text down from the top (adjust this for more or less space) */
     transform: translateY(-50%); /* Fine-tune vertical alignment */
 }
 
 .banner-text img {
-    width: 300px;
+    width: 400px;
     height: auto;
 }
 
 .banner-text p {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     margin: 0;
     transition: opacity 1s ease-in-out;
 }
