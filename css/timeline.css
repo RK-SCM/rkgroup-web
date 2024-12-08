@@ -34,8 +34,8 @@
     flex-shrink: 0; /* Prevent shrinking */
     min-width: 350px; /* Fixed width for items */
     margin-right: 50px; /* Space between items */
-    opacity: 0; /* Initially hidden */
-    animation: appear-from-right 5s ease-in-out infinite;
+    opacity: 1; /* Always visible */
+    transform: translateX(0); /* Default position */
 }
 
 .timeline-year {
@@ -76,26 +76,6 @@
     }
     100% {
         transform: translateX(-100%); /* End off-screen to the left */
-    }
-}
-
-/* Appearance Animation */
-@keyframes appear-from-right {
-    0% {
-        opacity: 0;
-        transform: translateX(50px); /* Start slightly off-screen */
-    }
-    10% {
-        opacity: 1;
-        transform: translateX(0); /* Fade in and slide into view */
-    }
-    90% {
-        opacity: 1;
-        transform: translateX(0); /* Stay visible */
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(-50px); /* Slide out to the left */
     }
 }
 
