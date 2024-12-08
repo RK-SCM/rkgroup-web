@@ -1,0 +1,74 @@
+/* Vision Mission Commitments Section */
+.vision-mission-commitments {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    background-color: #ffffff;
+}
+
+.vison-gird-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3x1 Grid */
+    grid-template-rows: 1fr;
+    gap: 20px;
+    padding: 20px; /* Small padding around the grid */
+    height: 80vh; /* Full viewport height */
+    margin: 0 auto; /* Center grid horizontally */
+    box-sizing: border-box;
+}
+
+.vison-gird-item {
+    display: flex; /* Use flexbox for centering content */
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Internal padding for content */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.content {
+    background: transparent; /* Semi-transparent background for text */
+    color: #020202;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.content h2 {
+    font-size: 2rem; /* Larger heading size for full-screen layout */
+    margin-bottom: 15px;
+    color: #2c2d5c; /* Professional color */
+    font-weight: 600;
+    text-align: center;
+}
+
+.content p {
+    font-size: 1.2rem; /* Slightly larger text for readability */
+    line-height: 1.8; /* Improved spacing for readability */
+    color: #555;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .vison-gird-container {
+        grid-template-columns: 1fr; /* Stack cells vertically on smaller screens */
+        grid-template-rows: repeat(3, 1fr); /* Adjust rows for stacking */
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    .vison-gird-item {
+        height: 200px; /* Adjust height for smaller screens */
+    }
+
+    .content h2 {
+        font-size: 1.8rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+}
