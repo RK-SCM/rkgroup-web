@@ -12,7 +12,7 @@
 }
 
 .carousel-container {
-    overflow: hidden; /* Hide overflow for smooth scrolling */
+    overflow: hidden; /* Hide overflow for a clean look */
     position: relative;
     width: 100%;
     margin: 0 auto;
@@ -21,7 +21,7 @@
 .carousel-wrapper {
     display: flex;
     gap: 10px;
-    animation: scroll-left 20s linear infinite; /* Smooth continuous scrolling */
+    /* Remove scrolling animation */
 }
 
 .carousel-item {
@@ -44,16 +44,6 @@
 
 .carousel-item:hover {
     transform: scale(1.05); /* Slight zoom effect on hover */
-}
-
-/* Scrolling Animation */
-@keyframes scroll-left {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
 }
 
 /* Responsive Adjustments */

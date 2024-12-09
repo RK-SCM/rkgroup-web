@@ -2,7 +2,7 @@
 .footer {
     background: #333; /* Dark background for footer */
     color: #fff;
-    padding: 40px 20px;
+    padding: 10px 20px;
 }
 
 .footer-container {
@@ -10,7 +10,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
-    max-width: 1200px;
+    max-width: auto;
     margin: 0 auto;
 }
 

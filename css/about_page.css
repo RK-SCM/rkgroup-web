@@ -10,61 +10,63 @@ body {
     line-height: 1.6;
     color: #333;
 }
+
+
 .banner {
     position: relative;
     width: 100%;
-    height: 30vh; /* 30% of the viewport height */
-    max-height: 30vh; /* Prevent exceeding 30% height */
+    height: 40vh; 
+    background: url('../img/about_banner.png') no-repeat center center; 
     background-size: cover;
     display: flex;
     justify-content: center;
-    align-items: center; /* Center items vertically */
+    align-items: flex-start; 
     transition: background-image 1s ease-in-out;
-    overflow: hidden; /* Prevent content overflow */
-    z-index: 1; /* Ensure the banner is layered below other elements */
 }
 
+
 .banner img {
-    max-height: 100%; /* Ensure the logo fits within the banner */
-    max-width: 100%; /* Prevent overflow */
-    object-fit: contain; /* Maintain aspect ratio */
+    max-height: 100%; 
+    max-width: 100%; 
+    object-fit: contain; 
 }
 
 .about-detailed-grid {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 20px; /* Adjust padding to include space on all sides */
-    margin: 50px auto 0; /* Ensure a clear gap above the grid */
+    padding: 50px 20px; 
+    margin: 50px auto 0; 
     max-width: auto;
-    z-index: 2; /* Ensure the grid stays above the banner */
-    position: relative; /* Stack correctly with the banner */
+    z-index: 2; 
+    position: relative; 
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr; /* Three columns: 1fr for heading, 2fr for content, 1fr for image */
-    grid-template-rows: auto; /* One row */
-    gap: 20px; /* Space between items */
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto; 
+    gap: 20px; 
     width: auto;
+    font-family: "Lucida Console", "Courier New", monospace;
 }
 
-/* Heading Styles */
+
 .grid-heading {
     text-align: left;
-    align-self: start; /* Align heading at the top */
+    align-self: start; 
     justify-self: center;
     margin-top: 20px;
+    
 }
 
 .grid-heading h1 {
     font-size: 2.5rem;
-    color: #2c974b;
-    font-family: sans-serif;
+    color: #e68173;
     font-weight: 700;
 }
 
-/* Content Styles */
+
 .grid-content {
     text-align: left;
    
@@ -72,7 +74,7 @@ body {
 
 .grid-content p {
     font-size: 1rem;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 .grid-content strong {
@@ -89,8 +91,8 @@ body {
 }
 
 .grid-image img {
-    width: 100%; /* Scale image */
-    max-width: 250px; /* Optional: Limit the max size */
+    width: 100%; 
+    max-width: 250px; 
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -102,11 +104,11 @@ body {
     color: #777;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .grid-container {
-        grid-template-columns: 1fr; /* Single-column layout for smaller screens */
-        grid-template-rows: auto auto auto; /* Stack items vertically */
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto auto auto; 
     }
 
     .grid-heading,

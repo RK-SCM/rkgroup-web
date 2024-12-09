@@ -52,4 +52,22 @@ document.addEventListener("DOMContentLoaded", function () {
                   console.error("Error loading Footer section:", error);
               });
       }
+
+           // Function to load Footer
+           const contactUsPlaceholder = document.getElementById("contact-us-include");
+           if (contactUsPlaceholder) {
+               fetch("../sections/contact.html")
+                   .then(response => {
+                       if (!response.ok) {
+                           throw new Error("Failed to load Footer section");
+                       }
+                       return response.text();
+                   })
+                   .then(data => {
+                    contactUsPlaceholder.innerHTML = data;
+                   })
+                   .catch(error => {
+                       console.error("Error loading Footer section:", error);
+                   });
+           }
 });
