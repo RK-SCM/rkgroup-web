@@ -2,28 +2,31 @@
 .full-width-image {
     position: relative;
     width: 100%; /* Full width */
-    height: 80vh; /* 50% of the screen height */
-    background: url('../img/about1.png') no-repeat center center; /* Replace with your image path */
+    height: 80vh; /* 80% of the screen height */
+    background: url('../img/about1.png') no-repeat center center;
     background-size: cover; /* Ensure the image fills the section without distortion */
     display: flex;
     align-items: center; /* Align text vertically */
     justify-content: flex-end; /* Position text in the second column */
+    padding: 20px; /* Add padding to prevent content from touching edges */
 }
 
 /* Text Container */
 .text-container {
-    width: 50%; /* Take up the second column */
-    background:transparent; /* Semi-transparent background for contrast */
-    padding: 20px; /* Add padding for better readability */
+    width: 50%; /* Default: Take up the second column */
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for contrast */
+    padding: 20px;
     color: #030303; /* Text color */
-    text-align: left; /* Align text to the left */
-    margin-right: 50px; /* Space from the right edge */
-    border-radius: 10px; /* Optional: Rounded corners for the text field */
+    text-align: left;
+    margin-right: 50px;
+    border-radius: 10px; /* Rounded corners */
+    overflow-y: auto; /* Enable scrolling for overflow text */
+    max-height: 70vh; /* Prevent the container from exceeding section height */
 }
 
 /* Text Styling */
 .text-container h2 {
-    font-size: 2.5rem; /* Large heading */
+    font-size: 2.5rem;
     margin-bottom: 10px;
     font-weight: bold;
     text-transform: uppercase; /* Optional: Make the text uppercase */
@@ -31,10 +34,10 @@
 
 .text-container p {
     font-size: 1.2rem;
-    line-height: 1.6; /* Adjust line height for better readability */
+    line-height: 1.6;
 }
 
-
+/* Button Styling */
 .learn-more-link {
     display: inline-block;
     text-decoration: none;
@@ -51,24 +54,56 @@
     color: #fff;
 }
 
+/* Responsive Styles */
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+/* For Screens ≤ 1575px */
+@media (max-width: 1575px) {
+    .full-width-image {
+        height: 80vh; /* Maintain section height */
+        justify-content: center; /* Center align content */
+        padding: 20px;
+    }
+
     .text-container {
-        width: 80%; /* Make text container smaller on small screens */
-        margin: 0 auto; /* Center align on smaller screens */
+        width: 100%; /* Expand to full width */
+        margin: 0; /* Remove margin */
+        padding: 20px;
         text-align: center; /* Center-align text */
     }
 
-    .full-width-image {
-        justify-content: center; /* Center text container on small screens */
-    }
-
     .text-container h2 {
-        font-size: 2rem; /* Adjust font size */
+        font-size: 2rem; /* Adjust heading size */
     }
 
     .text-container p {
-        font-size: 1rem; /* Adjust font size */
+        font-size: 1rem; /* Adjust paragraph size */
+    }
+}
+
+/* Mobile Devices (≤ 768px) */
+@media (max-width: 768px) {
+    .full-width-image {
+        height: 70vh; /* Reduce height for smaller screens */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .text-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .text-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .text-container p {
+        font-size: 1rem;
+    }
+
+    .learn-more-link {
+        font-size: 0.9rem;
+        padding: 8px 16px;
     }
 }
