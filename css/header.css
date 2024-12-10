@@ -78,6 +78,18 @@
         display: block; /* Show toggle button */
     }
     
+    .header {
+        height: 70px; /* Reduced header height for mobile */
+        padding: 5px 20px; /* Adjust padding for smaller screens */
+        background: transparent; /* Ensure the header stays transparent initially */
+    }
+
+    .header.scrolled {
+        height: 50px; /* Further reduced header height when scrolled */
+        background: #faf9f9; /* White background when scrolled */
+    }
+
+
 
     .nav ul {
         display: none; /* Hide menu by default */
@@ -102,12 +114,14 @@
         text-align: center;
     }
     .logo img {
-        height: 50px; /* Reduced logo height for mobile */
+        height: 90px; /* Reduced logo height for mobile */
         margin-top: 0;
+        transition: height 0.3s ease;
+        
     }
     .header.scrolled .logo img {
         height: 40px; 
-        margin-top: 0;
+       
     }
 
 }
