@@ -73,10 +73,11 @@
 }
 
 /* Mobile-specific Styles */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .menu-toggle {
         display: block; /* Show toggle button */
     }
+    
 
     .nav ul {
         display: none; /* Hide menu by default */
@@ -100,4 +101,13 @@
         padding: 10px 20px;
         text-align: center;
     }
+    .logo img {
+        height: 50px; /* Reduced logo height for mobile */
+        margin-top: 0;
+    }
+    .header.scrolled .logo img {
+        height: 40px; 
+        margin-top: 0;
+    }
+
 }
