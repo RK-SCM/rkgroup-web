@@ -1,3 +1,10 @@
+/* Reset body and html margins and paddings */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure consistent box model */
+}
+
 /* Header Section */
 
 /* Header Styles */
@@ -13,7 +20,7 @@
     background: transparent; /* Initially transparent */
     transition: background 0.3s ease, height 0.3s ease;
     z-index: 10;
-    height: 150px; /* Initial header height */
+    height: 150px; /* Default header height */
 }
 
 .header.scrolled {
@@ -21,8 +28,6 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     height: 70px; /* Reduced header height when scrolled */
 }
-
-
 
 .logo img {
     height: 150px; /* Default logo height */
@@ -32,8 +37,6 @@
 .header.scrolled .logo img {
     height: 50px; /* Reduced logo height when scrolled */
 }
-
-
 
 /* Navigation Menu */
 .nav ul {
@@ -72,31 +75,40 @@
     display: flex; /* Show menu when toggled */
 }
 
-/* Mobile-specific Styles */
+/* Responsive Styles */
+
+/* Small Mobile (<= 480px) */
 @media (max-width: 480px) {
     .menu-toggle {
         display: block; /* Show toggle button */
     }
-    
+
     .header {
         height: 70px; /* Reduced header height for mobile */
         padding: 5px 20px; /* Adjust padding for smaller screens */
-        background: transparent; /* Ensure the header stays transparent initially */
+        background: transparent;
     }
 
     .header.scrolled {
-        height: 50px; /* Further reduced header height when scrolled */
+        height: 50px;
         background: #faf9f9; /* White background when scrolled */
     }
 
+    .logo img {
+        height: 90px; /* Reduced logo height for mobile */
+        transition: height 0.3s ease;
+    }
 
+    .header.scrolled .logo img {
+        height: 40px;
+    }
 
     .nav ul {
         display: none; /* Hide menu by default */
         flex-direction: column;
         background: rgba(255, 255, 255, 0.95);
         position: absolute;
-        top: 80px; /* Below the header */
+        top: 70px; /* Below the header */
         left: 0;
         width: 100%;
         padding: 10px 0;
@@ -105,7 +117,7 @@
     }
 
     .nav ul.show {
-        display: flex; /* Show menu on toggle */
+        display: flex; /* Show menu when toggled */
     }
 
     .nav ul li a {
@@ -113,15 +125,73 @@
         padding: 10px 20px;
         text-align: center;
     }
-    .logo img {
-        height: 90px; /* Reduced logo height for mobile */
-        margin-top: 0;
-        transition: height 0.3s ease;
-        
-    }
-    .header.scrolled .logo img {
-        height: 40px; 
-       
+}
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show the toggle button */
     }
 
+    .nav ul {
+        display: none; /* Hide the menu by default */
+        flex-direction: column; /* Stack menu items vertically */
+        background: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+        position: absolute;
+        top: 70px; /* Position menu below header */
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+        z-index: 99;
+    }
+
+    .nav ul.show {
+        display: flex; /* Show menu when toggled */
+    }
+
+    .nav ul li a {
+        color: #333;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    .header {
+        height: 80px; /* Adjust header height for mobile and tablet */
+        padding: 5px 20px; /* Adjust padding */
+        background: transparent; /* Ensure header stays transparent initially */
+    }
+
+    .header.scrolled {
+        height: 60px; /* Further reduce height when scrolled */
+        background: #faf9f9; /* White background when scrolled */
+    }
+
+    .logo img {
+        height: 90px; /* Adjust logo size for mobile and tablet */
+        transition: height 0.3s ease;
+    }
+
+    .header.scrolled .logo img {
+        height: 50px; /* Smaller logo size when scrolled */
+    }
+}
+
+
+/* Large Screens (Desktop > 768px) */
+@media (min-width: 769px) {
+    .header {
+        height: 150px; /* Full-size header for larger screens */
+        padding: 10px 30px; /* Standard padding */
+    }
+
+    .header.scrolled {
+        height: 70px;
+    }
+
+    .logo img {
+        height: 150px; /* Full-size logo */
+    }
+
+    .header.scrolled .logo img {
+        height: 50px; /* Reduced size on scroll */
+    }
 }
