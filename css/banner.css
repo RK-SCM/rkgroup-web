@@ -3,11 +3,11 @@
     position: relative;
     width: 100%;
     height: 100vh; /* Full screen height */
-    background: url('../img/banner_gold.jpg') no-repeat center center; /* Default Banner Background */
+    background: url('../img/banner_gold.jpg') no-repeat center center;
     background-size: cover;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align items at the top */
+    align-items: flex-start;
     transition: background-image 1s ease-in-out;
 }
 
@@ -17,12 +17,12 @@
     flex-direction: row; /* Align image and text in one line */
     justify-content: center;
     align-items: center;
-    gap: 1px; /* Space between image and text */
+    gap: 20px; /* Space between image and text */
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    position: absolute; /* Position relative to the banner */
-    top: 80%; /* Push text down from the top (adjust this for more or less space) */
-    transform: translateY(-50%); /* Fine-tune vertical alignment */
+    position: absolute;
+    top: 80%; /* Push text down */
+    transform: translateY(-50%);
 }
 
 .banner-text img {
@@ -34,4 +34,47 @@
     font-size: 2.5rem;
     margin: 0;
     transition: opacity 1s ease-in-out;
+}
+
+/* Responsive Styles */
+
+/* Tablet Devices (<= 768px) */
+@media (max-width: 768px) {
+    .banner {
+        height: 100vh; /* Maintain full-screen height */
+    }
+
+    .banner-text {
+        flex-direction: column; /* Stack image and text vertically */
+        top: 75%; /* Adjust position slightly */
+        transform: translateY(-50%);
+        gap: 15px; /* Adjust gap for better spacing */
+        text-align: center; /* Center-align text */
+    }
+
+    .banner-text img {
+        width: 300px; /* Adjust image size */
+    }
+
+    .banner-text p {
+        font-size: 2rem; /* Adjust font size */
+    }
+}
+
+/* Desktop Devices (> 768px) */
+@media (min-width: 769px) {
+    .banner-text {
+        flex-direction: row; /* Keep image and text in one line */
+        top: 80%;
+        transform: translateY(-50%);
+        gap: 20px; /* Default gap */
+    }
+
+    .banner-text img {
+        width: 400px; /* Default image size */
+    }
+
+    .banner-text p {
+        font-size: 2.5rem; /* Default font size */
+    }
 }
