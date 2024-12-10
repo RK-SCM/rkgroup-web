@@ -1,86 +1,120 @@
-
-
+/* Companies Section */
 .companies {
     text-align: center;
-    margin: 20px auto; /* Add margin for spacing between sections */
-    background-color: #f9f9f9;
+    margin: 0; /* Increased spacing for better separation between sections */
+    padding: 20px; /* Added padding for visual balance */
+    background-color: #f9f9f9; /* Light gray background */
+    border-radius: 8px; /* Optional: Rounded corners for a softer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a professional look */
 }
 
 .companies h2 {
-    font-size: 2.5rem; /* Increased font size for better visibility */
-    font-family: 'Roboto', sans-serif; /* Professional font, adjust as needed */
+    font-size: 2.5rem; /* Large font size for better visibility */
+    font-family: 'Roboto', sans-serif; /* Professional sans-serif font */
     color: #2c3e50; /* Sophisticated dark gray/blue color */
     margin-bottom: 30px;
-    text-align: center; /* Align text to the left */
-    padding-left: 20px; /* Add padding to the left for better spacing */
-    font-weight: bold; /* Bold for emphasis */
-    text-transform: uppercase; /* Optional: Make text uppercase for a professional look */
-    letter-spacing: 1.5px; /* Add spacing between letters for better readability */
+    text-align: center; /* Center-align heading */
+    font-weight: bold;
+    text-transform: uppercase; /* Make text uppercase for emphasis */
+    letter-spacing: 1.5px; /* Add spacing between letters for readability */
 }
 
 /* Companies Grid Layout */
 .companies-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns by default */
-    gap: 0; /* Add space between images */
-    justify-items: center; /* Center images horizontally */ /* Center images vertically */
-    padding: 0px 200px; /* Add padding to the left and right */
+    grid-template-columns: repeat(4, 1fr); /* Default: 4 columns */
+    gap: 20px; /* Add space between grid items */
+    justify-items: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
+    padding: 0 50px; /* Padding for overall section balance */
+    background: transparent;
 }
 
-
-
 .company-box {
-    display: flex; /* Enable flexbox for centering */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%; /* Ensure full width of grid cell */
     height: 100%; /* Ensure full height of grid cell */
-    overflow: hidden; 
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling and shadow */
+    background-color: transparent; /* White background for images */
+    
+    
 }
 
 .company-box img {
-    width: 100%; /* Ensure image fills its container */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Fit the image without distortion */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    border: none; /* Ensure no border is applied */
+    max-width: 80%; /* Scale image for better balance */
+    max-height: 80%; /* Ensure the image maintains proportions */
+    object-fit: contain; /* Fit the image within its container */
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+    border-radius: 50px; 
+
 }
 
-.company-box:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
+.company-box img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+    cursor: pointer; /* Change cursor to pointer */
 }
-
 /* Responsive Adjustments */
+
+/* Medium Screens (<= 1024px) */
 @media (max-width: 1024px) {
     .companies-grid {
         grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+        gap: 15px; /* Reduced spacing */
     }
 
     .company-box {
-        width: 120px; /* Smaller size for medium screens */
-        height: 120px;
+        width: auto; /* Let the width adjust automatically */
+        height: auto;
+    }
+
+    .company-box img {
+        max-width: 90%; /* Adjust image size for medium screens */
+        max-height: 90%;
+    }
+    .companies h2 {
+        font-size: 2rem; /* Adjust heading size */
     }
 }
 
+/* Small Screens (<= 768px) */
 @media (max-width: 768px) {
     .companies-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+        gap: 15px; /* Maintain spacing */
+        padding: 0 20px; /* Adjust padding for smaller screens */
     }
 
-    .company-box {
-        width: 100px; /* Smaller size for smaller screens */
-        height: 100px;
+    .company-box img {
+        max-width: 100%; /* Utilize full container width */
+        max-height: 100%;
+    }
+    .companies h2 {
+        font-size: 1.8rem; /* Smaller heading size for tablets */
     }
 }
 
+/* Extra Small Screens (<= 480px) */
 @media (max-width: 480px) {
     .companies-grid {
         grid-template-columns: 1fr; /* Single column for very small screens */
+        gap: 10px; /* Reduced gap for small screens */
+        padding: 0 10px; /* Minimum padding */
     }
 
     .company-box {
-        width: 80px; /* Smallest size for mobile */
-        height: 80px;
+        width: 100%; /* Utilize full grid width */
+        height: auto;
+    }
+
+    .company-box img {
+        max-width: 90%; /* Slightly smaller images for small screens */
+        max-height: 90%;
+    }
+    .companies h2 {
+        font-size: 1.5rem; /* Smallest heading size for mobile */
     }
 }
