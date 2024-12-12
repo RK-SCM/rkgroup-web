@@ -57,7 +57,7 @@
 /* Responsive Styles */
 
 /* For Screens ≤ 1575px */
-@media (max-width: 1575px) {
+@media (max-width: 1200px) {
     .full-width-image {
         height: 80vh; /* Maintain section height */
         justify-content: center; /* Center align content */
