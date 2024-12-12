@@ -47,8 +47,9 @@ body, html {
 
 .nav ul li a {
     text-decoration: none;
-    color: #2c2d5c;
-    font-size: 1rem;
+    color: #020202;
+    font-weight: 500; 
+    font-size: 25px;
     transition: color 0.3s;
 }
 
@@ -179,7 +180,7 @@ body, html {
 /* Large Screens (Desktop > 768px) */
 @media (min-width: 769px) {
     .header {
-        height: 150px; /* Full-size header for larger screens */
+        height: 120px; /* Full-size header for larger screens */
         padding: 10px 30px; /* Standard padding */
     }
 
@@ -188,7 +189,7 @@ body, html {
     }
 
     .logo img {
-        height: 150px; /* Full-size logo */
+        height: 120px; /* Full-size logo */
     }
 
     .header.scrolled .logo img {
