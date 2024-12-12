@@ -31,24 +31,23 @@
 }
 
 .company-box {
-    display: flex;
+    width: 100%; /* Fixed width for grid cells */
+    height: 100%; /* Fixed height for grid cells */
+    overflow: hidden; /* Ensures images don't overflow the box */
+    display: flex; /* Center image inside box */
     justify-content: center;
     align-items: center;
-    width: 100%; /* Ensure full width of grid cell */
-    height: 100%; /* Ensure full height of grid cell */
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling and shadow */
-    background-color: transparent; /* White background for images */
-    
+    background-color: transparent; /* Optional background for contrast */
+
     
 }
 
 .company-box img {
-    max-width: 80%; /* Scale image for better balance */
-    max-height: 80%; /* Ensure the image maintains proportions */
-    object-fit: contain; /* Fit the image within its container */
+    width: 100%; /* Full width of the grid cell */
+    height: 100%; /* Full height of the grid cell */
+    object-fit: cover; /* Ensures the image fills the grid cell, cropping if necessary */
+    border-radius: 10px; /* Match the border-radius of the grid cell */
     transition: transform 0.3s ease; /* Smooth zoom effect */
-    border-radius: 50px; 
 
 }
 
