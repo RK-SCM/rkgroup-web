@@ -5,12 +5,72 @@ body {
     background: #f9fdf4;
     color: #333;
     line-height: 1.6;
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: skyblue;
+    transition: background 0.3s ease, height 0.3s ease;
+    z-index: 10;
+    height: 150px; /* Header height */
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent overflow */
+}
+
+.logo {
+    flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.logo img {
+    height: 100%; /* Ensure logo scales properly */
+    max-height: 130px; /* Adjust to fit within the header */
+    transition: height 0.3s ease;
+}
+
+/* Navigation Menu */
+.nav {
+    flex: 1; /* Allow navigation to take available space */
+    display: flex;
+    justify-content: flex-end; /* Align navigation items to the right */
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Add space between menu items */
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #020202;
+    font-weight: 500;
+    font-size: 20px; /* Adjust font size for better fit */
+    padding: 5px 10px; /* Add padding for clickable area */
+    transition: color 0.3s;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.nav ul li a:hover {
+    color: #d81b60;
 }
 
 /* Contact Us Section */
 .contact-us {
     padding: 50px 10%;
     background: #fff;
+    margin-top: 150px; /* Matches the header's height */
 }
 
 .contact-container {
