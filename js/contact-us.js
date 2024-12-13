@@ -1,24 +1,31 @@
-// Header scroll functionality
-const header = document.getElementById("header");
-const logoImg = document.getElementById("logo-img");
-const menuToggle = document.getElementById('menu-toggle');
-const navMenu = document.getElementById('nav-menu');
+// Initialize EmailJS
+emailjs.init('M58DNGclyauQCVzho'); // Replace YOUR_PUBLIC_KEY with your actual public key
 
-// Toggle navigation menu for mobile view
-if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('show'); // Toggle 'show' class to display/hide menu
-    });
-}
+// Handle form submission
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent default form submission
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 100) {
-        header.classList.add("scrolled");
-        header.classList.remove("transparent");
-        logoImg.src = "../img/logo_scrolled.jpg";
-    } else {
-        header.classList.remove("scrolled");
-        header.classList.add("transparent");
-        logoImg.src = "../img/logo_default.jpg";
+    // Get form data
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value,
+    };
+
+    if (!formData.name || !formData.email || !formData.message) {
+        alert('All fields are required.');
+        return;
     }
+    
+
+    // Send email using EmailJS
+    emailjs.send('service_x2h00bc', 'template_czegnlc', formData)
+        .then((response) => {
+            alert('Message sent successfully!');
+            document.getElementById('contactForm').reset(); // Clear the form
+        })
+        .catch((error) => {
+            alert('Failed to send message. Please try again.');
+            console.error('EmailJS Error:', error);
+        });
 });

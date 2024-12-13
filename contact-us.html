@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Rajakumari Group</title>
-     <!-- Favicon -->
-     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
- 
-     <!-- Reset Styles -->
-     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/about-detailed.css">
-    
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/contact.css">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/contact.css">
 </head>
-
 <body>
-    <header class="contact-header" id="header">
-        <button class="menu-toggle" id="menu-toggle">☰</button>
-        <div class="logo">
-            <img src="../img/logo_default.jpg" alt="Logo" id="logo-img"> <!-- Default logo -->
+    <section class="contact-us">
+        <div class="contact-container">
+            <!-- Contact Options -->
+            <div class="contact-options">
+                <h2>Contact Us</h2>
+                <p>Choose your preferred method to reach out to us:</p>
+                <div class="options">
+                    <!-- Email Option -->
+                    <a href="mailto:abukmca@gmail.com" class="contact-option email">
+                        <img src="img/email-icon.svg" alt="Email">
+                        <span>Email Us</span>
+                    </a>
+                    <!-- WhatsApp Option -->
+                    <a href="https://wa.me/+918921275166" class="contact-option whatsapp" target="_blank">
+                        <img src="img/whatsapp-icon.svg" alt="WhatsApp">
+                        <span>Chat on WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Write your message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
         </div>
-        <nav class="nav">
-            <ul id="nav-menu">
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="#career">Career</a></li>
-                <li><a href="#contact Us">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-
-    <section class="contact-banner" id="contact-banner" style="background-image: url('/img/about_banner.png');">
     </section>
-    
-    <div id="contact-us-include"></div>
-    
-    <div id="footer-include"></div>
-   
-    <script src="../js/load_sections.js"></script>
-    <script src="../js/contact-us.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
+    <script src="js/contact-us.js"></script>
+</body>
 </html>
