@@ -48,8 +48,9 @@
 .content p {
     font-size: 1.2rem; /* Slightly larger text for readability */
     line-height: 1.8; /* Improved spacing for readability */
-    color: #555;
+    color: #302e2e;
     text-align: center;
+    
 }
 
 /* Responsive Design */

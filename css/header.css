@@ -24,7 +24,7 @@ body, html {
 }
 
 .header.scrolled {
-    background: #faf9f9; /* Change background to white when scrolled */
+    background: white; /* Change background to white when scrolled */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     height: 70px; /* Reduced header height when scrolled */
 }
@@ -92,7 +92,7 @@ body, html {
 
     .header.scrolled {
         height: 50px;
-        background: #faf9f9; /* White background when scrolled */
+        background: white; /* White background when scrolled */
     }
 
     .logo img {

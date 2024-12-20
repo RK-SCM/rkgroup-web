@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
         { background: "../img/banner_gold.jpg", text: "Gold & Diamonds" },
         { background: "../img/banner_silks.jpg", text: "Wedding Center" },
         { background: "../img/banner_all_mart.jpg", text: "All Mart" },
+
+
     ];
 
     let currentIndex = 1; // Start from the second banner since the first is already displayed inline
