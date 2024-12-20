@@ -70,4 +70,23 @@ document.addEventListener("DOMContentLoaded", function () {
                        console.error("Error loading Footer section:", error);
                    });
            }
+
+        const aboutGridPlaceholder = document.getElementById("about-detailed-grid-placeholder");
+        if (aboutGridPlaceholder) {
+            fetch("../sections/about2.html")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Failed to load About Detailed Grid section");
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    aboutGridPlaceholder.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error("Error loading About Detailed Grid section:", error);
+                });
+        }
+
+
 });
