@@ -1,21 +1,50 @@
-// Counter Animation
-const counters = document.querySelectorAll('.counter');
+document.addEventListener("DOMContentLoaded", () => {
+    const aboutBottomSection = document.querySelector(".about-bottom");
+    const counters = document.querySelectorAll(".counter");
 
-counters.forEach(counter => {
-    const updateCounter = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
+    // Function to animate counters
+    function runCounters() {
+        counters.forEach(counter => {
+            const target = +counter.getAttribute("data-target"); // Target value
+            const speed = 5; // Speed of counting animation
+            let count = 0;
 
-        // Increment speed
-        const increment = Math.ceil((target - count) / 15);
+            const increment = Math.ceil(target / speed);
 
-        if (count < target) {
-            counter.innerText = count + increment;
-            setTimeout(updateCounter, 50);
-        } else {
-            counter.innerText = target;
+            const updateCounter = () => {
+                count += increment;
+                if (count >= target) {
+                    counter.textContent = target; // Set final value
+                } else {
+                    counter.textContent = count;
+                    requestAnimationFrame(updateCounter); // Continue animation
+                }
+            };
+
+            updateCounter(); // Start animation
+        });
+    }
+
+    // Ensure the counters only run once
+    let hasRun = false;
+
+    // Trigger counters on hover
+    aboutBottomSection.addEventListener("mouseenter", () => {
+        if (!hasRun) {
+            runCounters();
+            hasRun = true;
         }
-    };
+    });
 
-    updateCounter();
+    // Trigger counters when section is in view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasRun) {
+                runCounters();
+                hasRun = true;
+            }
+        });
+    });
+
+    observer.observe(aboutBottomSection);
 });
