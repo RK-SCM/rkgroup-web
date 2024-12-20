@@ -1,75 +1,130 @@
-/* Vision Mission Commitments Section */
+/* Reset styles for the vision-mission-commitments section */
+.vision-mission-commitments,
+.vision-mission-commitments * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Section Styling */
 .vision-mission-commitments {
+    width: 100%;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f4f4f4, #ffffff);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 0;
-    background-color: #ffffff;
 }
 
-.vison-gird-container {
+/* Grid Container */
+.vision-grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3x1 Grid */
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    padding: 20px; /* Small padding around the grid */
-    height: 80vh; /* Full viewport height */
-    margin: 0 auto; /* Center grid horizontally */
-    box-sizing: border-box;
+    max-width: 1200px;
+    width: 100%;
 }
 
-.vison-gird-item {
-    display: flex; /* Use flexbox for centering content */
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 20px; /* Internal padding for content */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+/* Grid Item */
+.vision-grid-item {
+    background-size: contain; /* Ensure image fits fully within the box */
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden; /* Prevent overflow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: flex-end;
 }
 
-.content {
-    background: transparent; /* Semi-transparent background for text */
-    color: #020202;
-    text-align: center;
+.vision-grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Content Area */
+.vision-grid-item .content {
+    background: rgba(46, 45, 45, 0.5); /* Semi-transparent overlay */
+    color: #fff;
+    width: 100%;
+    height: 66.67%; /* 2/3 of the entire box */
     padding: 20px;
-    border-radius: 5px;
+    text-align: center;
+    overflow-y: auto; /* Scrollable if content overflows */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.content h2 {
-    font-size: 2rem; /* Larger heading size for full-screen layout */
-    margin-bottom: 15px;
-    color: #2c2d5c; /* Professional color */
-    font-weight: 600;
-    text-align: center;
+.vision-grid-item .content::-webkit-scrollbar {
+    width: 8px;
 }
 
-.content p {
-    font-size: 1.2rem; /* Slightly larger text for readability */
-    line-height: 1.8; /* Improved spacing for readability */
-    color: #302e2e;
-    text-align: center;
-    
+.vision-grid-item .content::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+}
+
+.vision-grid-item .content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.vision-grid-item .content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .vision-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .vision-grid-item {
+        height: 250px;
+    }
+
+    .vision-grid-item .content {
+        height: 66.67%; /* Maintain 2/3 ratio */
+    }
+
+    .vision-grid-item .content h2 {
+        font-size: 1.6rem;
+    }
+
+    .vision-grid-item .content p {
+        font-size: 0.9rem;
+    }
+}
+
 @media (max-width: 768px) {
-    .vison-gird-container {
-        grid-template-columns: 1fr; /* Stack cells vertically on smaller screens */
-        grid-template-rows: repeat(3, 1fr); /* Adjust rows for stacking */
-        height: auto; /* Allow height to adjust based on content */
+    .vision-grid-container {
+        grid-template-columns: 1fr;
     }
 
-    .vison-gird-item {
-        height: 200px; /* Adjust height for smaller screens */
+    .vision-grid-item {
+        height: 200px;
     }
 
-    .content h2 {
-        font-size: 1.8rem;
+    .vision-grid-item .content {
+        height: 66.67%; /* Maintain 2/3 ratio */
     }
 
-    .content p {
-        font-size: 1rem;
+    .vision-grid-item .content h2 {
+        font-size: 1.4rem;
+    }
+
+    .vision-grid-item .content p {
+        font-size: 0.85rem;
     }
 }
