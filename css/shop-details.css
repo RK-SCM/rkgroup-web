@@ -169,3 +169,75 @@ header p {
         font-size: 0.9rem;
     }
 }
+
+
+/* Highlights Section */
+.highlights {
+    background: linear-gradient(to bottom, #fdfdfd, #f1f1f1); /* Subtle gradient background */
+    padding: 50px 20px; /* Spacing around the section */
+    text-align: center; /* Center-align content */
+}
+
+.highlights-container {
+    max-width: 1200px; /* Limit the container width */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Inner padding for spacing */
+}
+
+.highlights-title {
+    font-size: 2rem; /* Large heading size */
+    font-weight: bold; /* Bold heading */
+    color: #333333; /* Dark color for contrast */
+    margin-bottom: 20px; /* Spacing below the title */
+    text-transform: uppercase; /* Uppercase for emphasis */
+}
+
+.highlights-list {
+    list-style: none; /* Remove default bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0 auto; /* Center-align the list */
+    display: flex; /* Flexbox for responsive layout */
+    flex-wrap: wrap; /* Wrap items to the next line if needed */
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Space between list items */
+}
+
+.highlights-list li {
+    background: #ffffff; /* White background for each item */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Spacing inside each item */
+    width: 280px; /* Fixed width for each item */
+    text-align: left; /* Align text to the left */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.highlights-list li:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.highlights-list li::before {
+    content: "✔"; /* Checkmark icon */
+    color: #27ae60; /* Green checkmark */
+    font-size: 1.2rem; /* Adjust icon size */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.highlights-list li p {
+    font-size: 1rem; /* Standard text size */
+    color: #555555; /* Slightly darker text color */
+    line-height: 1.5; /* Better line spacing for readability */
+}
+
+@media (max-width: 768px) {
+    .highlights-list {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center-align items */
+    }
+
+    .highlights-list li {
+        width: 100%; /* Full width on smaller screens */
+        text-align: center; /* Center-align text */
+    }
+}
