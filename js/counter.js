@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
     function runCounters() {
         counters.forEach(counter => {
             const target = +counter.getAttribute("data-target"); // Target value
-            const speed = 500; // Speed of counting animation
+            const updates = 20; // Total number of updates
+            const interval = 100; // Time (in ms) between updates
+            const increment = Math.ceil(target / updates); // Increment value per update
             let count = 0;
-
-            const increment = Math.ceil(target / speed);
 
             const updateCounter = () => {
                 count += increment;
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     counter.textContent = target; // Set final value
                 } else {
                     counter.textContent = count;
-                    requestAnimationFrame(updateCounter); // Continue animation
+                    setTimeout(updateCounter, interval); // Continue animation at intervals
                 }
             };
 
