@@ -1,119 +1,73 @@
 /* Companies Section */
 .companies {
     text-align: center;
-    margin: 0; /* Increased spacing for better separation between sections */
-    padding: 20px; /* Added padding for visual balance */
-    background-color: #f9f9f9; /* Light gray background */
-    border-radius: 8px; /* Optional: Rounded corners for a softer look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a professional look */
+    margin: 0 auto;
+    padding: 20px 0; /* Add padding for spacing */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Heading */
 .companies h2 {
-    font-size: 2.5rem; /* Large font size for better visibility */
-    font-family: 'Roboto', sans-serif; /* Professional sans-serif font */
-    color: #2c3e50; /* Sophisticated dark gray/blue color */
-    margin-bottom: 30px;
-    text-align: center; /* Center-align heading */
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    color: #2c3e50;
+    margin-bottom: 30px; /* Increase spacing for balance */
     font-weight: bold;
-    text-transform: uppercase; /* Make text uppercase for emphasis */
-    letter-spacing: 1.5px; /* Add spacing between letters for readability */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 /* Companies Grid Layout */
 .companies-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Default: 4 columns */
-    gap: 20px; /* Add space between grid items */
-    justify-items: center; /* Center images horizontally */
-    align-items: center; /* Center images vertically */
-    padding: 0 50px; /* Padding for overall section balance */
-    background: transparent;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Consistent layout */
+    gap: 20px; /* Spacing between items */
+    justify-content: center; /* Center-align grid items */
+    max-width: 1200px; /* Restrict grid width */
+    margin: 0 auto; /* Center the grid */
+    padding: 0 20px; /* Add padding for balance */
+    align-items: start; /* Align items at the top */
 }
 
-.company-box {
-    width: 100%; /* Fixed width for grid cells */
-    height: 100%; /* Fixed height for grid cells */
-    overflow: hidden; /* Ensures images don't overflow the box */
-    display: flex; /* Center image inside box */
-    justify-content: center;
-    align-items: center;
-    background-color: transparent; /* Optional background for contrast */
-
-    
+/* Company Images */
+.companies-grid img {
+    width: 100%; /* Fully fill the grid cell horizontally */
+    height: 100%; /* Fully fill the grid cell vertically */
+    object-fit: cover; /* Prevent distortion */
+    border-radius: 25px; /* Consistent rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
 }
 
-.company-box img {
-    width: 100%; /* Full width of the grid cell */
-    height: 100%; /* Full height of the grid cell */
-    object-fit: cover; /* Ensures the image fills the grid cell, cropping if necessary */
-    border-radius: 10px; /* Match the border-radius of the grid cell */
-    transition: transform 0.3s ease; /* Smooth zoom effect */
-
-}
-
-.company-box img:hover {
+.companies-grid img:hover {
     transform: scale(1.05); /* Slight zoom effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-    cursor: pointer; /* Change cursor to pointer */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+    cursor: pointer;
 }
-/* Responsive Adjustments */
 
-/* Medium Screens (<= 1024px) */
-@media (max-width: 1024px) {
+/* Responsive Adjustments for Large Screens */
+@media (min-width: 1200px) {
+    .companies-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns for large screens */
+        gap: 25px; /* Adjust spacing */
+    }
+}
+
+/* Responsive Adjustments for Medium Screens */
+@media (min-width: 768px) and (max-width: 1199px) {
     .companies-grid {
         grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
-        gap: 15px; /* Reduced spacing */
-    }
-
-    .company-box {
-        width: auto; /* Let the width adjust automatically */
-        height: auto;
-    }
-
-    .company-box img {
-        max-width: 90%; /* Adjust image size for medium screens */
-        max-height: 90%;
-    }
-    .companies h2 {
-        font-size: 2rem; /* Adjust heading size */
+        gap: 20px;
     }
 }
 
-/* Small Screens (<= 768px) */
-@media (max-width: 768px) {
+/* Small Screens (Mobile) */
+@media (max-width: 767px) {
     .companies-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
-        gap: 15px; /* Maintain spacing */
-        padding: 0 20px; /* Adjust padding for smaller screens */
-    }
-
-    .company-box img {
-        max-width: 100%; /* Utilize full container width */
-        max-height: 100%;
-    }
-    .companies h2 {
-        font-size: 1.8rem; /* Smaller heading size for tablets */
-    }
-}
-
-/* Extra Small Screens (<= 480px) */
-@media (max-width: 480px) {
-    .companies-grid {
-        grid-template-columns: 1fr; /* Single column for very small screens */
-        gap: 10px; /* Reduced gap for small screens */
-        padding: 0 10px; /* Minimum padding */
-    }
-
-    .company-box {
-        width: 100%; /* Utilize full grid width */
-        height: auto;
-    }
-
-    .company-box img {
-        max-width: 90%; /* Slightly smaller images for small screens */
-        max-height: 90%;
-    }
-    .companies h2 {
-        font-size: 1.5rem; /* Smallest heading size for mobile */
+        grid-template-columns: 1fr; /* Single column for mobile */
+        gap: 15px; /* Reduce spacing for smaller screens */
+        padding: 0 5px; /* Minimize padding */
     }
 }
