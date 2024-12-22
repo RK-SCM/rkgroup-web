@@ -2,13 +2,14 @@
 .about-section {
     position: relative;
     width: 100%;
-    height: 60vh; /* Optimized for mobile height */
+    height: 60vh; /* Ensure the section height is fixed */
     background: url('../img/about1.png') no-repeat center center;
     background-size: cover; /* Ensure the image fills the section */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px; /* Add padding for mobile */
+    padding: 10px;
+    overflow: hidden; /* Prevent overflow beyond the section */
 }
 
 /* About Content */
@@ -19,7 +20,7 @@
     color: #030303; /* Text color */
     text-align: center; /* Center align text for mobile */
     border-radius: 10px; /* Rounded corners */
-    max-height: 70vh; /* Prevent overflow beyond section height */
+    max-height: 100%; /* Limit to the section's height */
     overflow-y: auto; /* Enable vertical scrolling for overflow content */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for contrast */
 }
@@ -67,6 +68,7 @@
         width: 80%; /* Take more width */
         margin: 0 auto; /* Center content */
         padding: 20px; /* Add more padding */
+        max-height: 100%; /* Limit content to the section's height */
     }
 
     .about-title {
@@ -90,6 +92,7 @@
         width: 50%; /* Take half the width */
         margin-right: 50px; /* Add spacing from the right edge */
         text-align: left; /* Left-align text for larger screens */
+        max-height: 100%; /* Limit content to the section's height */
     }
 
     .about-title {
