@@ -1,13 +1,18 @@
-/* Reset body and html margins and paddings */
-body, html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Ensure consistent box model */
+/* Variables */
+:root {
+    --header-height: 100px; /* Default height for mobile */
+    --header-height-scrolled: 60px; /* Scrolled height for mobile */
+    --background-color: white;
+    --hover-color: #d81b60;
+    --font-color: #020202;
+    --menu-background: rgba(255, 255, 255, 0.95);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --transition-duration: 0.3s;
 }
 
-/* Header Section */
+/* Mobile-First Base Styles */
 
-/* Header Styles */
+/* Header */
 .header {
     position: fixed;
     top: 0;
@@ -16,183 +21,129 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px;
-    background: transparent; /* Initially transparent */
-    transition: background 0.3s ease, height 0.3s ease;
     z-index: 10;
-    height: 150px; /* Default header height */
+    padding: 5px 20px;
+    height: var(--header-height); /* Mobile height */
+    background: transparent;
+    transition: background var(--transition-duration) ease, height var(--transition-duration) ease;
 }
 
 .header.scrolled {
-    background: white; /* Change background to white when scrolled */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 70px; /* Reduced header height when scrolled */
+    background: var(--background-color); /* Scrolled background */
+    box-shadow: 0 4px 6px var(--shadow-color);
+    height: var(--header-height-scrolled); /* Scrolled height */
 }
 
+/* Logo */
 .logo img {
-    height: 150px; /* Default logo height */
-    transition: height 0.3s ease;
+    max-height: var(--header-height); /* Match header height */
+    transition: max-height var(--transition-duration) ease;
 }
 
 .header.scrolled .logo img {
-    height: 50px; /* Reduced logo height when scrolled */
+    max-height: var(--header-height-scrolled); /* Scrolled logo size */
 }
 
-/* Navigation Menu */
+/* Navigation */
 .nav ul {
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column;
     list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav ul li a {
-    text-decoration: none;
-    color: #020202;
-    font-weight: 500; 
-    font-size: 25px;
-    transition: color 0.3s;
-}
-
-.nav ul li a:hover {
-    color: #d81b60;
-}
-
-/* Mobile Navigation */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: #333;
-    cursor: pointer;
-}
-
-.nav ul {
-    flex-direction: row;
-    gap: 20px;
+    background: var(--menu-background); /* Dropdown background */
+    position: absolute;
+    top: var(--header-height); /* Below header */
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    z-index: 99;
 }
 
 .nav ul.show {
     display: flex; /* Show menu when toggled */
 }
 
+.nav ul li a {
+    text-decoration: none;
+    color: var(--font-color);
+    font-weight: 500;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    transition: color var(--transition-duration);
+}
+
+.nav ul li a:hover,
+.nav ul li a:focus {
+    color: var(--hover-color); /* Hover/focus color */
+    outline: none; /* Remove default outline */
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+    display: block; /* Visible on mobile */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--font-color);
+    cursor: pointer;
+}
+
 /* Responsive Styles */
 
-/* Small Mobile (<= 480px) */
-@media (max-width: 480px) {
-    .menu-toggle {
-        display: block; /* Show toggle button */
+/* Tablets (>= 481px) */
+@media (min-width: 481px) {
+    .header {
+        padding: 10px 20px; /* Add more padding */
     }
 
+    .logo img {
+        max-height: 100px; /* Larger logo */
+    }
+
+    .header.scrolled .logo img {
+        max-height: 50px; /* Smaller logo when scrolled */
+    }
+
+    .nav ul li a {
+        font-size: 18px; /* Adjust font size for tablets */
+    }
+}
+
+/* Desktops (>= 769px) */
+@media (min-width: 769px) {
     .header {
-        height: 70px; /* Reduced header height for mobile */
-        padding: 5px 20px; /* Adjust padding for smaller screens */
+        height: var(--header-height, 150px); /* Full header height */
+        padding: 10px 30px; /* Add more padding */
+    }
+
+    .header.scrolled {
+        height: var(--header-height-scrolled, 70px); /* Scrolled height */
+    }
+
+    .logo img {
+        max-height: var(--header-height, 150px); /* Full-size logo */
+    }
+
+    .header.scrolled .logo img {
+        max-height: var(--header-height-scrolled, 70px); /* Scrolled logo size */
+    }
+
+    .menu-toggle {
+        display: none; /* Hide toggle button on desktops */
+    }
+
+    .nav ul {
+        display: flex; /* Inline menu for desktops */
+        flex-direction: row; /* Horizontal layout */
+        gap: 20px;
+        position: static; /* Default position */
+        box-shadow: none; /* No dropdown shadow */
         background: transparent;
     }
 
-    .header.scrolled {
-        height: 50px;
-        background: white; /* White background when scrolled */
-    }
-
-    .logo img {
-        height: 90px; /* Reduced logo height for mobile */
-        transition: height 0.3s ease;
-    }
-
-    .header.scrolled .logo img {
-        height: 40px;
-    }
-
-    .nav ul {
-        display: none; /* Hide menu by default */
-        flex-direction: column;
-        background: rgba(255, 255, 255, 0.95);
-        position: absolute;
-        top: 70px; /* Below the header */
-        left: 0;
-        width: 100%;
-        padding: 10px 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 99;
-    }
-
-    .nav ul.show {
-        display: flex; /* Show menu when toggled */
-    }
-
     .nav ul li a {
-        color: #333;
-        padding: 10px 20px;
-        text-align: center;
-    }
-}
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block; /* Show the toggle button */
-    }
-
-    .nav ul {
-        display: none; /* Hide the menu by default */
-        flex-direction: column; /* Stack menu items vertically */
-        background: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
-        position: absolute;
-        top: 70px; /* Position menu below header */
-        left: 0;
-        width: 100%;
-        padding: 10px 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
-        z-index: 99;
-    }
-
-    .nav ul.show {
-        display: flex; /* Show menu when toggled */
-    }
-
-    .nav ul li a {
-        color: #333;
-        padding: 10px 20px;
-        text-align: center;
-    }
-
-    .header {
-        height: 80px; /* Adjust header height for mobile and tablet */
-        padding: 5px 20px; /* Adjust padding */
-        background: transparent; /* Ensure header stays transparent initially */
-    }
-
-    .header.scrolled {
-        height: 60px; /* Further reduce height when scrolled */
-        background: #faf9f9; /* White background when scrolled */
-    }
-
-    .logo img {
-        height: 90px; /* Adjust logo size for mobile and tablet */
-        transition: height 0.3s ease;
-    }
-
-    .header.scrolled .logo img {
-        height: 50px; /* Smaller logo size when scrolled */
-    }
-}
-
-
-/* Large Screens (Desktop > 768px) */
-@media (min-width: 769px) {
-    .header {
-        height: 120px; /* Full-size header for larger screens */
-        padding: 10px 30px; /* Standard padding */
-    }
-
-    .header.scrolled {
-        height: 70px;
-    }
-
-    .logo img {
-        height: 120px; /* Full-size logo */
-    }
-
-    .header.scrolled .logo img {
-        height: 50px; /* Reduced size on scroll */
+        padding: 0; /* Remove extra padding for inline links */
+        font-size: 20px; /* Larger font size for desktops */
     }
 }
