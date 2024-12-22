@@ -3,31 +3,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px 15px; /* Slightly increased padding */
+    padding: 30px 15px; /* Adjusted padding */
     background: #5c5b5b;
     text-align: center;
     position: relative;
-    overflow: hidden; /* Prevent grid overflow */
-    height: 400px; /* Increased height */
+    height: 400px; /* Section height */
 }
 
-/* Counter Grid Wrapper (for scrolling) */
+/* Counter Grid Wrapper */
 .counter-grid-wrapper {
-    position: relative;
-    display: flex;
     width: 100%;
     overflow-x: auto; /* Enable horizontal scrolling */
     scroll-behavior: smooth; /* Smooth scrolling effect */
+    display: block; /* Ensure proper layout for grid */
 }
 
 /* Counter Grid */
 .counter-grid {
+    margin: 0 auto;
     display: grid;
-    grid-template-rows: repeat(2, auto); /* Strictly 2 rows */
-    grid-auto-flow: column; /* Items flow horizontally into columns */
+    grid-template-rows: repeat(2, auto); /* 2 rows */
+    grid-auto-flow: column; /* Flow horizontally */
     grid-gap: 20px; /* Space between items */
     align-items: center;
     justify-content: center;
+    width: max-content; /* Allow grid to expand for scrolling */
 }
 
 /* Counter Item */
@@ -49,14 +49,14 @@
 }
 
 .counter-item img {
-    width: 60px; /* Slightly larger icons */
+    width: 60px;
     height: 60px;
     margin-bottom: 10px;
     display: block;
 }
 
 .counter-item h3 {
-    font-size: 1.5rem; /* Slightly larger font size */
+    font-size: 1.5rem;
     font-weight: bold;
     color: #eeb807da;
     margin: 5px 0;
@@ -73,34 +73,25 @@
     text-overflow: ellipsis;
 }
 
-/* Scroll Buttons */
-.scroll-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 10;
-    font-size: 20px;
-    transition: background 0.3s ease;
-}
+/* Scrollbar Styling for Small Screens */
+@media (max-width: 1050px) {
+    .counter-grid-wrapper {
+        overflow-x: scroll; /* Enable horizontal scrolling for smaller screens */
+        scrollbar-width: thin; /* Firefox: thin scrollbar */
+        scrollbar-color: #ccc #5c5b5b; /* Firefox: scrollbar colors */
+    }
 
-.scroll-button:hover {
-    background: rgba(0, 0, 0, 0.7);
-}
+    /* Webkit Scrollbar Styles */
+    .counter-grid-wrapper::-webkit-scrollbar {
+        height: 8px; /* Scrollbar height */
+    }
 
-.scroll-button.left {
-    left: 10px;
-}
+    .counter-grid-wrapper::-webkit-scrollbar-thumb {
+        background: #ccc; /* Scrollbar thumb color */
+        border-radius: 4px;
+    }
 
-.scroll-button.right {
-    right: 10px;
+    .counter-grid-wrapper::-webkit-scrollbar-track {
+        background: #5c5b5b; /* Scrollbar track color */
+    }
 }

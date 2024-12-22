@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     const aboutBottomSection = document.querySelector(".about-bottom");
+    const counterGridWrapper = document.querySelector(".counter-grid-wrapper");
     const counters = document.querySelectorAll(".counter");
 
     // Function to animate counters
     function runCounters() {
         counters.forEach(counter => {
-            const target = +counter.getAttribute("data-target"); // Target value
+            const target = +counter.getAttribute("data-target");
             const speed = 5; // Speed of counting animation
             let count = 0;
 
@@ -46,5 +47,27 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    observer.observe(aboutBottomSection);
+    if (aboutBottomSection) {
+        observer.observe(aboutBottomSection);
+    }
+
+    // Add Scroll Buttons (Optional)
+    const scrollLeftButton = document.querySelector(".scroll-button.left");
+    const scrollRightButton = document.querySelector(".scroll-button.right");
+
+    if (scrollLeftButton && scrollRightButton) {
+        scrollLeftButton.addEventListener("click", () => {
+            counterGridWrapper.scrollBy({
+                left: -300, // Scroll 300px to the left
+                behavior: "smooth",
+            });
+        });
+
+        scrollRightButton.addEventListener("click", () => {
+            counterGridWrapper.scrollBy({
+                left: 300, // Scroll 300px to the right
+                behavior: "smooth",
+            });
+        });
+    }
 });
