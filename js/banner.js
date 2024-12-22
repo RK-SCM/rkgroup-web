@@ -32,5 +32,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Start the interval for subsequent banners
-    setInterval(updateBanner, 5000); // Change every 5 seconds
+    setInterval(updateBanner, 3000); // Change every 5 seconds
 });
