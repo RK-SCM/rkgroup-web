@@ -1,15 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const showMoreLink = document.getElementById("show-more");
+    const learnMoreLink = document.querySelector(".about-link");
     const hiddenContent = document.querySelector(".hidden-content");
 
-    if (showMoreLink && hiddenContent) {
-        showMoreLink.addEventListener("click", (e) => {
-            e.preventDefault(); // Prevent default anchor behavior
+    if (learnMoreLink && hiddenContent) {
+        learnMoreLink.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent default link behavior
             hiddenContent.classList.toggle("visible");
+
+            // Toggle link text
             if (hiddenContent.classList.contains("visible")) {
-                showMoreLink.textContent = "Show Less";
+                learnMoreLink.textContent = "Show Less";
             } else {
-                showMoreLink.textContent = "Learn More";
+                learnMoreLink.textContent = "Read More";
             }
         });
     }

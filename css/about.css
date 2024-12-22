@@ -1,109 +1,107 @@
-/* Full-width Image Section */
-.full-width-image {
+/* About Section */
+.about-section {
     position: relative;
-    width: 100%; /* Full width */
-    height: 80vh; /* 80% of the screen height */
+    width: 100%;
+    height: 60vh; /* Optimized for mobile height */
     background: url('../img/about1.png') no-repeat center center;
-    background-size: cover; /* Ensure the image fills the section without distortion */
+    background-size: cover; /* Ensure the image fills the section */
     display: flex;
-    align-items: center; /* Align text vertically */
-    justify-content: flex-end; /* Position text in the second column */
-    padding: 20px; /* Add padding to prevent content from touching edges */
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Add padding for mobile */
 }
 
-/* Text Container */
-.text-container {
-    width: 50%; /* Default: Take up the second column */
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for contrast */
-    padding: 20px;
+/* About Content */
+.about-content {
+    width: 100%; /* Full width for mobile */
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+    padding: 15px;
     color: #030303; /* Text color */
-    text-align: left;
-    margin-right: 50px;
+    text-align: center; /* Center align text for mobile */
     border-radius: 10px; /* Rounded corners */
-    overflow-y: auto; /* Enable scrolling for overflow text */
-    max-height: 70vh; /* Prevent the container from exceeding section height */
+    max-height: 70vh; /* Prevent overflow beyond section height */
+    overflow-y: auto; /* Enable vertical scrolling for overflow content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for contrast */
 }
 
-/* Text Styling */
-.text-container h2 {
-    font-size: 2.5rem;
+/* About Title */
+.about-title {
+    font-size: 1.8rem; /* Optimized for mobile screens */
     margin-bottom: 10px;
     font-weight: bold;
-    text-transform: uppercase; /* Optional: Make the text uppercase */
+    text-transform: uppercase;
 }
 
-.text-container p {
-    font-size: 1.2rem;
+/* About Text */
+.about-text {
+    font-size: 1rem; /* Smaller font size for mobile */
     line-height: 1.6;
+    margin-bottom: 1em;
 }
 
-/* Button Styling */
-.learn-more-link {
+/* Learn More Link */
+.about-link {
     display: inline-block;
     text-decoration: none;
     color: #fff;
     background: #d81b60;
-    padding: 10px 20px;
+    padding: 8px 16px; /* Adjusted padding for mobile */
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-.learn-more-link:hover {
+.about-link:hover {
     background: #b3184d;
     color: #fff;
 }
 
-/* Responsive Styles */
-
-/* For Screens ≤ 1575px */
-@media (max-width: 1200px) {
-    .full-width-image {
-        height: 80vh; /* Maintain section height */
-        justify-content: center; /* Center align content */
-        padding: 20px;
+/* Tablet and Small Desktops (>= 768px) */
+@media (min-width: 768px) {
+    .about-section {
+        height: 70vh; /* Increase height for larger screens */
+        padding: 20px; /* Add more padding */
     }
 
-    .text-container {
-        width: 100%; /* Expand to full width */
-        margin: 0; /* Remove margin */
-        padding: 20px;
-        text-align: center; /* Center-align text */
+    .about-content {
+        width: 80%; /* Take more width */
+        margin: 0 auto; /* Center content */
+        padding: 20px; /* Add more padding */
     }
 
-    .text-container h2 {
-        font-size: 2rem; /* Adjust heading size */
+    .about-title {
+        font-size: 2rem; /* Increase heading size */
     }
 
-    .text-container p {
-        font-size: 1rem; /* Adjust paragraph size */
+    .about-text {
+        font-size: 1.2rem; /* Increase paragraph size */
     }
 }
 
-/* Mobile Devices (≤ 768px) */
-@media (max-width: 768px) {
-    .full-width-image {
-        height: 70vh; /* Reduce height for smaller screens */
-        padding: 10px; /* Adjust padding */
+/* Desktop (>= 1200px) */
+@media (min-width: 1200px) {
+    .about-section {
+        height: 80vh; /* Full height for desktops */
+        justify-content: flex-end; /* Align content to the right */
+        padding: 20px; /* Add consistent padding */
     }
 
-    .text-container {
-        width: 100%;
-        margin: 0 auto;
-        padding: 15px;
-        text-align: center;
+    .about-content {
+        width: 50%; /* Take half the width */
+        margin-right: 50px; /* Add spacing from the right edge */
+        text-align: left; /* Left-align text for larger screens */
     }
 
-    .text-container h2 {
-        font-size: 1.8rem;
+    .about-title {
+        font-size: 2.5rem; /* Larger heading */
     }
 
-    .text-container p {
-        font-size: 1rem;
+    .about-text {
+        font-size: 1.2rem;
     }
 
-    .learn-more-link {
-        font-size: 0.9rem;
-        padding: 8px 16px;
+    .about-link {
+        font-size: 1rem; /* Larger button */
+        padding: 10px 20px; /* Increase padding */
     }
 }
