@@ -1,71 +1,106 @@
 /* About Bottom Section */
 .about-bottom {
-    display: block;
-    padding: 40px 20px; /* Adequate spacing for breathing room */
-    background: #5c5b5b; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px; /* Slightly increased padding */
+    background: #5c5b5b;
     text-align: center;
     position: relative;
+    overflow: hidden; /* Prevent grid overflow */
+    height: 300px; /* Increased height */
 }
 
+/* Counter Grid Wrapper (for scrolling) */
+.counter-grid-wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+}
+
+/* Counter Grid */
 .counter-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ensure responsive grid layout */
-    gap: 30px; /* Larger space between cards */
+    grid-template-rows: repeat(2, auto); /* Strictly 2 rows */
+    grid-auto-flow: column; /* Items flow horizontally into columns */
+    grid-gap: 20px; /* Space between items */
     align-items: center;
     justify-content: center;
 }
 
+/* Counter Item */
 .counter-item {
-    background: transparent; /* Rich gold gradient */
-    border-radius: 90px; /* Rounded corners for a modern feel */
-    padding: 25px;
+    display: flex;
+    flex-direction: column; /* Vertical alignment */
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    background: transparent;
+    border-radius: 15px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .counter-item:hover {
-    transform: translateY(-8px); /* Slight lift effect on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .counter-item img {
-    width: 60px;
+    width: 60px; /* Slightly larger icons */
     height: 60px;
-    margin-bottom: 15px;
-    filter: none; /* No grayscale for a polished look */
+    margin-bottom: 10px;
+    display: block;
 }
 
 .counter-item h3 {
-    font-size: 1.6rem; /* Emphasize the counter number */
+    font-size: 1.5rem; /* Slightly larger font size */
     font-weight: bold;
-    color: #eeb807da; /* Strong contrast for text */
-    margin-bottom: 8px;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6); /* Subtle text shadow for elegance */
+    color: #eeb807da;
+    margin: 5px 0;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
 }
 
 .counter-item p {
-    font-size: 1rem; /* Standard size for supporting text */
-    color: #fce308; /* Slightly darker text for better readability */
-    margin-bottom: 0;
-    text-transform: capitalize; /* Uniform text style */
+    font-size: 1rem;
+    color: #fce308;
+    margin: 0;
+    text-transform: capitalize;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
+/* Scroll Buttons */
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 20px;
+    transition: background 0.3s ease;
+}
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .counter-grid {
-        gap: 20px; /* Slightly reduced gap for smaller screens */
-    }
+.scroll-button:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
 
-    .counter-item {
-        padding: 20px;
-    }
+.scroll-button.left {
+    left: 10px;
+}
 
-    .counter-item h3 {
-        font-size: 1.4rem; /* Adjust text size for smaller screens */
-    }
-
-    .counter-item p {
-        font-size: 0.9rem; /* Slightly smaller supporting text */
-    }
+.scroll-button.right {
+    right: 10px;
 }
