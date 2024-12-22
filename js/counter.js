@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         counters.forEach(counter => {
             const target = +counter.getAttribute("data-target"); // Target value
             const updates = 20; // Total number of updates
-            const interval = 100; // Time (in ms) between updates
+            const interval = 300; // Time (in ms) between updates
             const increment = Math.ceil(target / updates); // Increment value per update
             let count = 0;
 
