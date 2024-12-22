@@ -8,7 +8,7 @@
     text-align: center;
     position: relative;
     overflow: hidden; /* Prevent grid overflow */
-    height: 300px; /* Increased height */
+    height: 400px; /* Increased height */
 }
 
 /* Counter Grid Wrapper (for scrolling) */
